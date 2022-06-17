@@ -1,26 +1,25 @@
 import "./App.css";
 import { Component } from "react";
 import { useDispatch, useSelector } from "react-redux/es/exports";
-import {
-  increment,
-  decrement,
-  incrementByValue,
-} from "./redux/actionGenerator";
+import { increment, decrement, incrementByValue } from "./counterSlice";
 
 const App = () => {
   const count = useSelector((state) => state.counter.count);
   const dispatch = useDispatch();
 
   const increment1 = () => {
-    increment(dispatch);
+    dispatch(increment());
+    //increment(dispatch);
   };
 
   const decrement1 = () => {
-    decrement(dispatch);
+    dispatch(decrement());
+    //decrement(dispatch);
   };
 
   const incrementByValue1 = (value) => {
-    incrementByValue(dispatch, value);
+    dispatch(incrementByValue(value));
+    //incrementByValue(dispatch, value);
   };
 
   return (
